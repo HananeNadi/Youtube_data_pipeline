@@ -11,6 +11,18 @@ The scraped data includes key metrics such as:
 - **Likes**: The number of likes for the video.
 - **Comments**: The total number of comments for the video.
 
+## Tools Used 🛠️
+
+This project utilized the following technologies and tools:
+
+- **YouTube Data API**: Leveraged to extract data from YouTube channels and videos.
+- **Python**: Used for data extraction, transformation, and integration into the ETL pipeline.
+- **PySpark**: Employed for large-scale data processing and transformation tasks.
+- **AWS S3**: Used for data storage and management in a scalable and cost-effective manner.
+- **Apache Airflow**: Utilized to orchestrate the ETL pipeline and manage workflow scheduling.
+- **Docker**: Facilitated the creation of containerized environments for consistent deployment.
+- **AWS QuickSight**: Implemented for data visualization and dashboard creation to analyze insights.
+
 ## Data Pipeline
 ![ec](https://github.com/user-attachments/assets/b2fbcaee-10f5-4702-ad44-4a4957c7aa25)
 
@@ -25,19 +37,6 @@ The scraped data includes key metrics such as:
 - **Orchestration**: The entire ETL pipeline was orchestrated using **Apache Airflow**, ensuring automation and scheduling of the data pipeline for continuous updates.
 
 - **Visualization**: **AWS QuickSight** was used for interactive visualizations, providing insightful dashboards that offer a deeper understanding of the performance of the channels over time.
-
-## Tools Used 🛠️
-
-This project utilized the following technologies and tools:
-
-- **YouTube Data API**: Leveraged to extract data from YouTube channels and videos.
-- **Python**: Used for data extraction, transformation, and integration into the ETL pipeline.
-- **PySpark**: Employed for large-scale data processing and transformation tasks.
-- **AWS S3**: Used for data storage and management in a scalable and cost-effective manner.
-- **Apache Airflow**: Utilized to orchestrate the ETL pipeline and manage workflow scheduling.
-- **Docker**: Facilitated the creation of containerized environments for consistent deployment.
-- **AWS QuickSight**: Implemented for data visualization and dashboard creation to analyze insights.
-
 
 
 ## Prerequisites 📋
