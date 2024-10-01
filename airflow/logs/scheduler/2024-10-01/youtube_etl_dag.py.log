@@ -3385,3 +3385,83 @@ Please take a look at these docs to improve your DAG import time:
 [2024-10-01T01:41:55.740+0000] {logging_mixin.py:190} INFO - [2024-10-01T01:41:55.740+0000] {clientserver.py:543} INFO - Closing down clientserver connection
 [2024-10-01T01:41:55.771+0000] {processor.py:927} WARNING - No viable dags retrieved from /opt/airflow/dags/youtube_etl_dag.py
 [2024-10-01T01:41:56.980+0000] {processor.py:208} INFO - Processing /opt/airflow/dags/youtube_etl_dag.py took 32.174 seconds
+[2024-10-01T01:42:28.098+0000] {processor.py:186} INFO - Started process (PID=9353) to work on /opt/airflow/dags/youtube_etl_dag.py
+[2024-10-01T01:42:28.100+0000] {processor.py:914} INFO - Processing file /opt/airflow/dags/youtube_etl_dag.py for tasks to queue
+[2024-10-01T01:42:28.105+0000] {logging_mixin.py:190} INFO - [2024-10-01T01:42:28.103+0000] {dagbag.py:588} INFO - Filling up the DagBag from /opt/airflow/dags/youtube_etl_dag.py
+[2024-10-01T01:42:31.492+0000] {logging_mixin.py:190} INFO - airflow here...
+[2024-10-01T01:42:58.119+0000] {logging_mixin.py:190} INFO - [2024-10-01T01:42:58.117+0000] {timeout.py:68} ERROR - Process timed out, PID: 9353
+[2024-10-01T01:42:58.342+0000] {logging_mixin.py:190} INFO - [2024-10-01T01:42:58.186+0000] {dagbag.py:387} ERROR - Failed to import: /opt/airflow/dags/youtube_etl_dag.py
+Traceback (most recent call last):
+  File "/home/airflow/.local/lib/python3.12/site-packages/airflow/models/dagbag.py", line 383, in parse
+    loader.exec_module(new_module)
+  File "<frozen importlib._bootstrap_external>", line 995, in exec_module
+  File "<frozen importlib._bootstrap>", line 488, in _call_with_frames_removed
+  File "/opt/airflow/dags/youtube_etl_dag.py", line 5, in <module>
+    from transformation import transform_youtube_data
+  File "/opt/airflow/dags/transformation.py", line 65, in <module>
+    transform_youtube_data()
+  File "/opt/airflow/dags/transformation.py", line 61, in transform_youtube_data
+    df_cleaned.write.csv(output_path, header=True, mode='overwrite')
+  File "/home/airflow/.local/lib/python3.12/site-packages/pyspark/sql/readwriter.py", line 1864, in csv
+    self._jwrite.csv(path)
+  File "/home/airflow/.local/lib/python3.12/site-packages/py4j/java_gateway.py", line 1321, in __call__
+    answer = self.gateway_client.send_command(command)
+             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/airflow/.local/lib/python3.12/site-packages/py4j/java_gateway.py", line 1038, in send_command
+    response = connection.send_command(command)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/airflow/.local/lib/python3.12/site-packages/py4j/clientserver.py", line 511, in send_command
+    answer = smart_decode(self.stream.readline()[:-1])
+                          ^^^^^^^^^^^^^^^^^^^^^^
+  File "/usr/local/lib/python3.12/socket.py", line 720, in readinto
+    return self._sock.recv_into(b)
+           ^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/airflow/.local/lib/python3.12/site-packages/airflow/utils/timeout.py", line 69, in handle_timeout
+    raise AirflowTaskTimeout(self.error_message)
+airflow.exceptions.AirflowTaskTimeout: DagBag import timeout for /opt/airflow/dags/youtube_etl_dag.py after 30.0s.
+Please take a look at these docs to improve your DAG import time:
+* https://airflow.apache.org/docs/apache-airflow/2.10.2/best-practices.html#top-level-python-code
+* https://airflow.apache.org/docs/apache-airflow/2.10.2/best-practices.html#reducing-dag-complexity, PID: 9353
+[2024-10-01T01:42:58.374+0000] {logging_mixin.py:190} INFO - [2024-10-01T01:42:58.373+0000] {clientserver.py:543} INFO - Closing down clientserver connection
+[2024-10-01T01:42:58.437+0000] {processor.py:927} WARNING - No viable dags retrieved from /opt/airflow/dags/youtube_etl_dag.py
+[2024-10-01T01:42:58.874+0000] {processor.py:208} INFO - Processing /opt/airflow/dags/youtube_etl_dag.py took 30.808 seconds
+[2024-10-01T01:43:29.614+0000] {processor.py:186} INFO - Started process (PID=9490) to work on /opt/airflow/dags/youtube_etl_dag.py
+[2024-10-01T01:43:29.617+0000] {processor.py:914} INFO - Processing file /opt/airflow/dags/youtube_etl_dag.py for tasks to queue
+[2024-10-01T01:43:29.623+0000] {logging_mixin.py:190} INFO - [2024-10-01T01:43:29.622+0000] {dagbag.py:588} INFO - Filling up the DagBag from /opt/airflow/dags/youtube_etl_dag.py
+[2024-10-01T01:43:31.572+0000] {logging_mixin.py:190} INFO - airflow here...
+[2024-10-01T01:43:59.642+0000] {logging_mixin.py:190} INFO - [2024-10-01T01:43:59.640+0000] {timeout.py:68} ERROR - Process timed out, PID: 9490
+[2024-10-01T01:43:59.743+0000] {logging_mixin.py:190} INFO - [2024-10-01T01:43:59.656+0000] {dagbag.py:387} ERROR - Failed to import: /opt/airflow/dags/youtube_etl_dag.py
+Traceback (most recent call last):
+  File "/home/airflow/.local/lib/python3.12/site-packages/airflow/models/dagbag.py", line 383, in parse
+    loader.exec_module(new_module)
+  File "<frozen importlib._bootstrap_external>", line 995, in exec_module
+  File "<frozen importlib._bootstrap>", line 488, in _call_with_frames_removed
+  File "/opt/airflow/dags/youtube_etl_dag.py", line 5, in <module>
+    from transformation import transform_youtube_data
+  File "/opt/airflow/dags/transformation.py", line 65, in <module>
+    transform_youtube_data()
+  File "/opt/airflow/dags/transformation.py", line 61, in transform_youtube_data
+    df_cleaned.write.csv(output_path, header=True, mode='overwrite')
+  File "/home/airflow/.local/lib/python3.12/site-packages/pyspark/sql/readwriter.py", line 1864, in csv
+    self._jwrite.csv(path)
+  File "/home/airflow/.local/lib/python3.12/site-packages/py4j/java_gateway.py", line 1321, in __call__
+    answer = self.gateway_client.send_command(command)
+             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/airflow/.local/lib/python3.12/site-packages/py4j/java_gateway.py", line 1038, in send_command
+    response = connection.send_command(command)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/airflow/.local/lib/python3.12/site-packages/py4j/clientserver.py", line 511, in send_command
+    answer = smart_decode(self.stream.readline()[:-1])
+                          ^^^^^^^^^^^^^^^^^^^^^^
+  File "/usr/local/lib/python3.12/socket.py", line 720, in readinto
+    return self._sock.recv_into(b)
+           ^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/airflow/.local/lib/python3.12/site-packages/airflow/utils/timeout.py", line 69, in handle_timeout
+    raise AirflowTaskTimeout(self.error_message)
+airflow.exceptions.AirflowTaskTimeout: DagBag import timeout for /opt/airflow/dags/youtube_etl_dag.py after 30.0s.
+Please take a look at these docs to improve your DAG import time:
+* https://airflow.apache.org/docs/apache-airflow/2.10.2/best-practices.html#top-level-python-code
+* https://airflow.apache.org/docs/apache-airflow/2.10.2/best-practices.html#reducing-dag-complexity, PID: 9490
+[2024-10-01T01:43:59.754+0000] {logging_mixin.py:190} INFO - [2024-10-01T01:43:59.754+0000] {clientserver.py:543} INFO - Closing down clientserver connection
+[2024-10-01T01:43:59.768+0000] {processor.py:927} WARNING - No viable dags retrieved from /opt/airflow/dags/youtube_etl_dag.py
+[2024-10-01T01:44:00.394+0000] {processor.py:208} INFO - Processing /opt/airflow/dags/youtube_etl_dag.py took 30.795 seconds
