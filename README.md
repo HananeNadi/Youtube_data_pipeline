@@ -1,2 +1,168 @@
-# Youtube_data_pipeline
-YouTube data Analysis Pipeline: ETL with Airflow, Spark, S3 and Docker
+# YouTube Data ETL Pipeline with PySpark and AWS
+
+## Overview 🚀
+This project builds an ETL (Extract, Transform, Load) pipeline that retrieves data from the **YouTube Data API**, transforms it using **PySpark**, and loads the data into **AWS S3**. The pipeline is orchestrated using **Apache Airflow** for automation, and the final data is visualized in **AWS QuickSight** to analyze metrics from three great channels in the IT and data engineering/science domains: **freeCodeCamp**, **Alex The Analyst**, and **3Blue1Brown**.
+
+The scraped data includes key metrics such as:
+- **ChannelTitle**: Name of the YouTube channel.
+- **Title**: Title of the video.
+- **Published_date**: The date the video was published.
+- **Views**: The number of views the video has.
+- **Likes**: The number of likes for the video.
+- **Comments**: The total number of comments for the video.
+
+## Key Visualizations 📊
+
+The collected data is analyzed and visualized using AWS QuickSight, providing insights such as:
+
+- **Top 10 Viewed Videos**: A ranking of the top 10 most viewed videos from the three channels.
+- **Top 10 Liked Videos**: A ranking of the top 10 most liked videos across the channels.
+- **Channel Growth Over the Years**: A timeline showing the growth of each channel in terms of views and subscribers.
+- **Total Number of Videos per Channel**: A summary of the total video count for each channel.
+- **Total Views per Channel**: The total number of views accumulated by each channel.
+- **Annual Video Uploads per Channel**: A breakdown of how many videos each channel uploads annually, showing content creation consistency.
+
+## Key Highlights 🌟
+
+- **Data Extraction**: Scraped YouTube data using the YouTube Data API, retrieving critical video and channel metrics from **freeCodeCamp**, **Alex The Analyst**, and **3Blue1Brown**.
+
+- **Data Transformation**: Leveraged **PySpark** for cleaning and transforming the data, ensuring that it is ready for loading into AWS S3. This involved converting data types, handling missing values, and extracting time-based features to track growth over the years.
+
+- **Data Loading**: Transformed data was loaded into **AWS S3** for long-term storage and to support the visualizations created in AWS QuickSight.
+
+- **Orchestration**: The entire ETL pipeline was orchestrated using **Apache Airflow**, ensuring automation and scheduling of the data pipeline for continuous updates.
+
+- **Visualization**: **AWS QuickSight** was used for interactive visualizations, providing insightful dashboards that offer a deeper understanding of the performance of the channels over time.
+
+## Tools Used 🛠️
+
+- **Python**
+- **PySpark**
+- **Apache Airflow**
+- **YouTube Data API**
+- **AWS S3**
+- **AWS QuickSight**
+- **Docker**
+- **Docker Compose**
+
+
+## Data Pipeline
+![ec](https://github.com/user-attachments/assets/b2fbcaee-10f5-4702-ad44-4a4957c7aa25)
+
+
+## Prerequisites 📋
+
+Before setting up and running the project, ensure that you have the following credentials and tools ready:
+
+### 1. Obtain a YouTube Data API Key
+
+1. Go to the [Google Developers Console](https://console.developers.google.com/).
+2. Create a new project.
+3. In the API Library, search for **YouTube Data API v3** and enable it for your project.
+4. Navigate to the **Credentials** section, generate new credentials, and select **API Key**.
+5. Copy the generated API Key for use in the project.
+
+### 2. Acquire AWS Access Key ID and Secret Access Key
+
+1. Log in to your [AWS Management Console](https://aws.amazon.com/console/).
+2. Navigate to **IAM (Identity and Access Management)**.
+3. Create a new user with programmatic access.
+4. Attach a policy that grants permissions for Amazon S3 (e.g., **AmazonS3FullAccess**).
+5. Generate an Access Key ID and Secret Access Key for this user.
+6. Save these keys securely, as you will need them to access AWS services from within the project.
+
+### 3. Required Tools
+
+- **Docker**: Download and install Docker from the [official website](https://www.docker.com/get-started).
+- **Docker Compose**: Docker Compose should be installed as part of the Docker setup.
+
+Make sure all the required tools and credentials are prepared before proceeding with the setup.
+
+
+## Setup Instructions 📝
+
+Follow these steps to set up and run the project on your machine:
+
+### Step 1: Clone the repository
+
+```bash
+git clone https://github.com/YourUsername/YouTube-ETL-Pipeline.git
+cd YouTube-ETL-Pipeline
+```
+
+
+### Step 2: Create a .env File for Credentials
+
+Create a .env file in the root directory of the project and add the following environment variables:
+
+```plaintext
+AWS_ACCESS_KEY_ID=Your AWS Access Key ID
+AWS_SECRET_ACCESS_KEY=Your AWS Secret Access Key
+YOUTUBE_API_KEY=Your YouTube Data API Key
+```
+
+### Step 3: Build the Docker Containers
+
+```bash
+docker compose build
+```
+
+### Step 4: Start the Docker Containers
+
+```bash
+docker compose up
+```
+
+### Step 5: Execute the ETL Pipeline
+
+```bash
+docker exec -it youtube_data_pipeline-airflow_pipeline-1 python /opt/airflow/dags/youtube_etl_dag.py
+```
+
+### Step 6: Access the Airflow Web Interface 🌐
+
+You can now access the Airflow web interface to manage your ETL process DAGs (Directed Acyclic Graphs).
+
+- **URL**: [http://localhost:8080](http://localhost:8080)
+
+#### Initial Login
+
+If you are accessing the Airflow web interface for the first time, you will need to log in with the following credentials:
+
+- **Username**: `admin`
+- **Password**: The password can be found in the `standalone_admin_password.txt` file located in the Airflow folder created after running the `docker-compose up` command.
+
+
+### Step 7: Visualization with AWS QuickSight
+Once the data is loaded into AWS S3, set up AWS QuickSight for data visualization:
+
+Open AWS QuickSight.
+Connect to the S3 bucket.
+Create visualizations to explore the YouTube data and derive insights.
+
+![vis](https://github.com/user-attachments/assets/6629521a-83dc-48fc-a086-b7edb2c3de69)
+
+
+## Authors
+
+- [@HananeNadi](https://github.com/HananeNadi)
+
+## Contact Me
+
+Feel free to contact me at:
+
+- Email: nadi.hanane01@gmail.com
+- LinkedIn: [Hanane Nadi](https://www.linkedin.com/in/hanane-nadi-32089a251/)
+
+
+
+
+
+
+
+
+
+
+
+
+
