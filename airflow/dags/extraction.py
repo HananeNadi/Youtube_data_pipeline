@@ -3,18 +3,16 @@ from dotenv import load_dotenv
 import os
 from googleapiclient.discovery import build
 
-def extract_youtube_data(**kwargs):
-    api_key = kwargs['api_key']
+def extract_youtube_data():
     try:
         print("Starting YouTube data extraction...")
-
         load_dotenv()
 
-        # YOUTUBE_API_KEY = os.getenv('YOUTUBE_API_KEY')
-        if not api_key:
+        YOUTUBE_API_KEY = os.getenv('YOUTUBE_API_KEY')
+        if not YOUTUBE_API_KEY:
             raise ValueError("YOUTUBE_API_KEY is not set")
 
-        youtube = build('youtube', 'v3', developerKey=api_key)
+        youtube = build('youtube', 'v3', developerKey=YOUTUBE_API_KEY)
 
         channel_ids = [
             'UCYO_jab_esuFRV4b17AJtAw',  
@@ -120,3 +118,4 @@ def extract_youtube_data(**kwargs):
         print(f"Error during extraction: {str(e)}")
         raise
 
+# extract_youtube_data()

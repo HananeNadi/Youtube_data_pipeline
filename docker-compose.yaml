@@ -1,9 +1,9 @@
 version: '3'
 services:
 
-  youTubedatapipeline:
+  airflow_pipeline:
     build: .
-    image: youtube-data-pipeline:latest
+    image: airflow-youtube-pipeline:latest
     volumes:
       - ./airflow:/opt/airflow
     ports:

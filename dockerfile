@@ -12,8 +12,8 @@ RUN apt-get update && \
 # Switch to airflow user to install Python packages
 USER airflow
 
-# Install necessary Python packages
-RUN pip install --no-cache-dir pyspark pandas google-api-python-client boto3 nltk python-dotenv
+# Install necessary Python packages with the latest versions
+RUN pip install --no-cache-dir pyspark pandas google-api-python-client boto3 nltk python-dotenv json
 
 # Download NLTK stopwords
 RUN python -m nltk.downloader stopwords
