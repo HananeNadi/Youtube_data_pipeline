@@ -28,14 +28,16 @@ The scraped data includes key metrics such as:
 
 ## Tools Used 🛠️
 
-- **Python**
-- **PySpark**
-- **Apache Airflow**
-- **YouTube Data API**
-- **AWS S3**
-- **AWS QuickSight**
-- **Docker**
-- **Docker Compose**
+This project utilized the following technologies and tools:
+
+- **YouTube Data API**: Leveraged to extract data from YouTube channels and videos.
+- **Python**: Used for data extraction, transformation, and integration into the ETL pipeline.
+- **PySpark**: Employed for large-scale data processing and transformation tasks.
+- **AWS S3**: Used for data storage and management in a scalable and cost-effective manner.
+- **Apache Airflow**: Utilized to orchestrate the ETL pipeline and manage workflow scheduling.
+- **Docker**: Facilitated the creation of containerized environments for consistent deployment.
+- **AWS QuickSight**: Implemented for data visualization and dashboard creation to analyze insights.
+
 
 
 ## Prerequisites 📋
@@ -121,6 +123,10 @@ If you are accessing the Airflow web interface for the first time, you will need
 - **Password**: The password can be found in the `standalone_admin_password.txt` file located in the Airflow folder created after running the `docker-compose up` command.
 
 
+Here is our DAG, which successfully executed the ETL pipeline as intended : 
+![dag](https://github.com/user-attachments/assets/a8094cd5-100f-4cdc-9ed9-93a51eb02aff)
+
+
 ### Step 7: Visualization with AWS QuickSight
 Once the data is loaded into AWS S3, set up AWS QuickSight for data visualization:
 
@@ -129,6 +135,12 @@ Connect to the S3 bucket.
 Create visualizations to explore the YouTube data and derive insights.
 
 ![vis](https://github.com/user-attachments/assets/6629521a-83dc-48fc-a086-b7edb2c3de69)
+
+
+
+## Conclusion 🎉
+
+In this project, we successfully developed a robust ETL pipeline that extracts data from the YouTube Data API, transforms it using PySpark, and loads it into AWS S3 for further analysis. By orchestrating the entire process with Apache Airflow, we ensured efficient workflow management and seamless execution. The integration with AWS QuickSight allows for insightful data visualization, enabling users to gain valuable insights into YouTube channel performance. This project not only demonstrates the effectiveness of using modern data engineering tools but also showcases the potential for scalable and efficient data processing solutions in the realm of data analytics.
 
 
 ## Authors
@@ -141,16 +153,4 @@ Feel free to contact me at:
 
 - Email: nadi.hanane01@gmail.com
 - LinkedIn: [Hanane Nadi](https://www.linkedin.com/in/hanane-nadi-32089a251/)
-
-
-
-
-
-
-
-
-
-
-
-
 
