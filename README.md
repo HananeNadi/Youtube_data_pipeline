@@ -11,16 +11,8 @@ The scraped data includes key metrics such as:
 - **Likes**: The number of likes for the video.
 - **Comments**: The total number of comments for the video.
 
-## Key Visualizations 📊
-
-The collected data is analyzed and visualized using AWS QuickSight, providing insights such as:
-
-- **Top 10 Viewed Videos**: A ranking of the top 10 most viewed videos from the three channels.
-- **Top 10 Liked Videos**: A ranking of the top 10 most liked videos across the channels.
-- **Channel Growth Over the Years**: A timeline showing the growth of each channel in terms of views and subscribers.
-- **Total Number of Videos per Channel**: A summary of the total video count for each channel.
-- **Total Views per Channel**: The total number of views accumulated by each channel.
-- **Annual Video Uploads per Channel**: A breakdown of how many videos each channel uploads annually, showing content creation consistency.
+## Data Pipeline
+![ec](https://github.com/user-attachments/assets/b2fbcaee-10f5-4702-ad44-4a4957c7aa25)
 
 ## Key Highlights 🌟
 
@@ -44,10 +36,6 @@ The collected data is analyzed and visualized using AWS QuickSight, providing in
 - **AWS QuickSight**
 - **Docker**
 - **Docker Compose**
-
-
-## Data Pipeline
-![ec](https://github.com/user-attachments/assets/b2fbcaee-10f5-4702-ad44-4a4957c7aa25)
 
 
 ## Prerequisites 📋
